@@ -1,0 +1,18 @@
+﻿Build started 2/8/2017 6:58:40 PM.
+     1>Project "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\GraphicsLib\GraphicsLib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\\" /Fd"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\vc120.pdb" /Gd /TP /errorReport:prompt LoadTetGenFiles.cpp
+         Skipping... (no relevant changes detected)
+         LoadTetGenFiles.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\lib\GraphicsLib_x64_Debug.lib" /NOLOGO /MACHINE:X64 "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\Grid.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\LoadTetGenFiles.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\PNG.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\Shader.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\GraphicsLib\Texture.obj"
+         GraphicsLib.vcxproj -> C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\lib\GraphicsLib_x64_Debug.lib
+     1>Done Building Project "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\GraphicsLib\GraphicsLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.01

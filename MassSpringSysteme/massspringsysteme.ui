@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MassSpringSystemeClass</class>
+ <widget class="QMainWindow" name="MassSpringSystemeClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1164</width>
+    <height>806</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MassSpringSysteme</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background: rgba(50, 50, 50, 200);
+	border: 2px solid gray;
+	border-radius: 5px;
+}
+
+QComboBox {
+     border: 1px solid gray;
+     border-radius: 4px;
+     padding: 1px 18px 1px 3px;
+     min-width: 6em;
+ }
+
+ QPushButton {
+     background-color:  rgba(220, 220, 220, 200);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 12px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: rgba(255, 255, 255, 250);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 12px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+ QPushButton#pushButton_update {
+     background-color:  rgba(100, 100, 100, 200);
+     border-style: outset;
+     border-width: 1px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_pumpOnce {
+     background-color:  rgba(100, 100, 100, 200);
+     border-style: outset;
+     border-width: 1px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_animate {
+     background-color:  rgba(100, 100, 100, 200);
+     border-style: outset;
+     border-width: 1px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_stop {
+     background-color:  rgba(100, 100, 100, 200);
+     border-style: outset;
+     border-width: 1px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+ QPushButton#pushButton_update:pressed {
+     background-color:  rgba(240, 240, 240, 200);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_pumpOnce:pressed {
+     background-color:  rgba(240, 240, 240, 200);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_animate:pressed {
+     background-color:  rgba(240, 240, 240, 200);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }
+
+QPushButton#pushButton_stop:pressed {
+     background-color:  rgba(240, 240, 240, 200);
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 5px;
+     border-color: beige;
+     font: bold 14px;
+     min-width: 5em;
+     padding: 2px;
+ }</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>1</number>
+      </property>
+      <widget class="MyGLWidget" name="glwidget" native="true"/>
+      <widget class="QFrame" name="frame">
+       <property name="minimumSize">
+        <size>
+         <width>306</width>
+         <height>698</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>306</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QFrame" name="mesh_frame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>286</width>
+          <height>152</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>286</width>
+          <height>152</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>286</width>
+          <height>152</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QPushButton" name="button_line">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Line</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_tetrahedron">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>10</y>
+           <width>91</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Tetrahedron</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_cube">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>10</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Cube</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>81</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel 
+{ color: rgba(200, 200, 200, 200) }</string>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <property name="text">
+          <string>Load Meshes:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="combo_box_load_mesh">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>251</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Tube</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sphere</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Simple Heart</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Complex Heart</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Real Heart</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="button_load">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>110</y>
+           <width>131</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Load</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="attr_frame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>170</y>
+          <width>286</width>
+          <height>511</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>286</width>
+          <height>455</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="geometry">
+          <rect>
+           <x>15</x>
+           <y>10</y>
+           <width>261</width>
+           <height>491</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px;
+     border-radius: 4px;
+	background-color: rgba(150, 150, 150, 200);
+}
+
+/*QTabWidget::tab-bar {
+    left: 5px;
+}*/
+
+/*QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px;
+    border-bottom-color: rgba(190, 190, 190, 200); 
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    min-width: 5ex;
+    padding: 2px;
+}*/
+
+/*QTabBar::tab:selected {
+ 	border: 4px;
+	border-color: rgba(190, 190, 190, 200);
+    border-bottom-color: rgba(190, 190, 190, 200);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-width: 5ex;
+    padding: 2px;
+}*/</string>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>General</string>
+          </attribute>
+          <widget class="QPushButton" name="pushButton_update">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>430</y>
+             <width>141</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Update</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>110</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Rest Length:</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_gravity">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>50</y>
+             <width>101</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <double>-99.989999999999995</double>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_bel">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>170</y>
+             <width>81</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>50</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>System Gravity:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>81</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Particle Mass:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>170</y>
+             <width>171</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Bounce Energy Loss (per bounce):</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_rc">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>110</y>
+             <width>101</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="maximum">
+            <double>200.000000000000000</double>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>140</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Stiffness:</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_ks">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>140</y>
+             <width>101</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="maximum">
+            <double>5000.000000000000000</double>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_mass">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>80</y>
+             <width>101</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>101</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="text">
+            <string>System Attributes:</string>
+           </property>
+          </widget>
+          <widget class="QToolBox" name="toolBox">
+           <property name="geometry">
+            <rect>
+             <x>8</x>
+             <y>202</y>
+             <width>251</width>
+             <height>221</height>
+            </rect>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="page">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>251</width>
+              <height>167</height>
+             </rect>
+            </property>
+            <attribute name="label">
+             <string>Linear Damping ( Kd = a*|v|+b )</string>
+            </attribute>
+            <widget class="QLabel" name="label_9">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>40</y>
+               <width>71</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>b:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>70</y>
+               <width>101</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>|Vt|:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_8">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>10</y>
+               <width>71</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>a:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_16">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>100</y>
+               <width>71</width>
+               <height>16</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Maximum Kd:</string>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_linearMaxKd">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>100</y>
+               <width>81</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.050000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.900000000000000</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_linearA">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>10</y>
+               <width>81</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="singleStep">
+              <double>0.050000000000000</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_linearB">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>40</y>
+               <width>81</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="singleStep">
+              <double>0.005000000000000</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_linearVt">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>70</y>
+               <width>81</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="decimals">
+              <number>6</number>
+             </property>
+             <property name="singleStep">
+              <double>5.000000000000000</double>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="page_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>100</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <attribute name="label">
+             <string>Quadratic Damping</string>
+            </attribute>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>RI</string>
+          </attribute>
+          <widget class="QLabel" name="label_11">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>161</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Heterogeneous Increase:</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_rld">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>60</y>
+             <width>91</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="decimals">
+            <number>4</number>
+           </property>
+           <property name="minimum">
+            <double>-99.989999999999995</double>
+           </property>
+           <property name="singleStep">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.500000000000000</double>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>90</y>
+             <width>161</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Heterogeneous Decrease:</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_rld_2">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>90</y>
+             <width>91</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="decimals">
+            <number>4</number>
+           </property>
+           <property name="minimum">
+            <double>-99.989999999999995</double>
+           </property>
+           <property name="singleStep">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="value">
+            <double>-0.500000000000000</double>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_13">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Heart Rate (bpm):</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_hr">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>10</y>
+             <width>91</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="minimum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>400.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>5.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>60.000000000000000</double>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_animate">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>350</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Animate</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_stop">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>350</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Stop</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_14">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>140</y>
+             <width>161</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Homogeneous Increase:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>170</y>
+             <width>161</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Spring Homogeneous Decrease:</string>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_shi">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>140</y>
+             <width>91</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="minimum">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>9.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.010000000000000</double>
+           </property>
+          </widget>
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_shd">
+           <property name="geometry">
+            <rect>
+             <x>170</x>
+             <y>170</y>
+             <width>91</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="minimum">
+            <double>-1.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.050000000000000</double>
+           </property>
+           <property name="value">
+            <double>-0.010000000000000</double>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>200</y>
+             <width>261</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string>Method:</string>
+           </property>
+           <widget class="QRadioButton" name="radioButton_ri_he">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>101</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Heterogeneous</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioButton_ri_ho">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>40</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Homogeneous</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QPushButton" name="pushButton_pumpOnce">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>300</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Pump Once</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>SI</string>
+          </attribute>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="button_frame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>680</y>
+          <width>286</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QPushButton" name="button_start">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>78</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Start</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_end">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>10</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>End</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1164</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuShading">
+    <property name="title">
+     <string>Shading</string>
+    </property>
+    <addaction name="actionLines_Shading"/>
+    <addaction name="actionSurface_Shading"/>
+   </widget>
+   <addaction name="menuShading"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionLines_Shading">
+   <property name="text">
+    <string>Lines Shading</string>
+   </property>
+  </action>
+  <action name="actionSurface_Shading">
+   <property name="text">
+    <string>Surface Shading</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyGLWidget</class>
+   <extends>QWidget</extends>
+   <header>MyGLWidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>slot_start_button()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="massspringsysteme.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>button_start</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>880</x>
+     <y>532</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_line</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>897</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_end</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonEnd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1024</x>
+     <y>513</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_tetrahedron</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonTetrahedron()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>930</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_cube</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonCube()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1030</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_load</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotButtonLoad()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1057</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>combo_box_load_mesh</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotComboBoxLoadMeshes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>965</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_update</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotPushButtonUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1101</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>585</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_animate</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotPushButtonAnimate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1118</x>
+     <y>596</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_stop</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotPushButtonStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1152</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ri_ho</sender>
+   <signal>pressed()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotRadioButtonRIHo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1161</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ri_he</sender>
+   <signal>pressed()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotRadioButtonRIHe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1036</x>
+     <y>526</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_pumpOnce</sender>
+   <signal>released()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotPushButtonPumpOnce()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1096</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLines_Shading</sender>
+   <signal>triggered()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotActionLinesShading()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSurface_Shading</sender>
+   <signal>triggered()</signal>
+   <receiver>MassSpringSystemeClass</receiver>
+   <slot>slotActionSurfaceShading()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotButtonStart()</slot>
+  <slot>slotButtonLine()</slot>
+  <slot>slotButtonTetrahedron()</slot>
+  <slot>slotButtonCube()</slot>
+  <slot>slotButtonEnd()</slot>
+  <slot>slotButtonLoad()</slot>
+  <slot>slotComboBoxLoadMeshes()</slot>
+  <slot>slotPushButtonUpdate()</slot>
+  <slot>slotPushButtonAnimate()</slot>
+  <slot>slotPushButtonStop()</slot>
+  <slot>slotRadioButtonRIHo()</slot>
+  <slot>slotRadioButtonRIHe()</slot>
+  <slot>slotPushButtonPumpOnce()</slot>
+  <slot>slotActionLinesShading()</slot>
+  <slot>slotActionSurfaceShading()</slot>
+ </slots>
+</ui>

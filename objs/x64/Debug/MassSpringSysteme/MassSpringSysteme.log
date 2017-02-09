@@ -1,0 +1,18 @@
+﻿Build started 2/8/2017 6:58:45 PM.
+     1>Project "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\MassSpringSysteme\MassSpringSysteme.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.1\5.5\msvc2013_64\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtCore /IC:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtGui /IC:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtOpenGL /IC:\Qt\Qt5.5.1\5.5\msvc2013_64\include\QtWidgets /Zi /nologo /W1 /WX- /Od /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\\" /Fd"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\vc120.pdb" /Gd /TP /errorReport:prompt GeneratedFiles\qrc_massspringsysteme.cpp
+         qrc_massspringsysteme.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\bin\x64\Debug\MassSpringSysteme_x64_Debug.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.5.1\5.5\msvc2013_64\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib glew32.lib GraphicsLib_x64_Debug.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\bin\x64\Debug\MassSpringSysteme_x64_Debug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\bin\x64\Debug\MassSpringSysteme_x64_Debug.lib" /MACHINE:X64 "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\moc_massspringsysteme.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\moc_MyGLWidget.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\qrc_massspringsysteme.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\MyGLWidget.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\main.obj"
+         "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\objs\x64\Debug\MassSpringSysteme\massspringsysteme.obj"
+         MassSpringSysteme.vcxproj -> C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\bin\x64\Debug\MassSpringSysteme_x64_Debug.exe
+     1>Done Building Project "C:\Users\Jason\Desktop\CG Lab\General Projects\MassSpring\WithShaders\MassSpringSysteme\MassSpringSysteme\MassSpringSysteme.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.05
